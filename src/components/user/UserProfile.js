@@ -109,7 +109,7 @@ class UserProfile extends Component{
 												
 													<div className="form-group">
 														<label>First Name</label>
-														<input type="text" className="form-control" value="Christine"/>
+                                                        <input type="text" className="form-control" defaultValue="Christine"/>
 													</div>
 													
 												</div>
@@ -118,7 +118,7 @@ class UserProfile extends Component{
 												
 													<div className="form-group">
 														<label>Last Name</label>
-														<input type="text" className="form-control" value="Gateau"/>
+														<input type="text" className="form-control" defaultValue="Gateau"/>
 													</div>
 													
 												</div>
@@ -132,26 +132,26 @@ class UserProfile extends Component{
 														<div className="row gap-5">
 															<div className="col-xs-3 col-sm-3">
 																<select className="selectpicker form-control" data-live-search="false">
-																	<option value="0">day</option>
-																	<option value="1">01</option>
-																	<option value="2" selected>02</option>
-																	<option value="3">03</option>
+																	<option defaultValue="0">day</option>
+																	<option defaultValue="1">01</option>
+																	<option defaultValue="2">02</option>
+																	<option defaultValue="3">03</option>
 																</select>
 															</div>
 															<div className="col-xs-5 col-sm-5">
 																<select className="selectpicker form-control" data-live-search="false">
-																	<option value="0">month</option>
-																	<option value="1">Jan</option>
-																	<option value="2" selected>Feb</option>
-																	<option value="3">Mar</option>
+																	<option defaultValue="0">month</option>
+																	<option defaultValue="1">Jan</option>
+																	<option defaultValue="2">Feb</option>
+																	<option defaultValue="3">Mar</option>
 																</select>
 															</div>
 															<div className="col-xs-4 col-sm-4">
 																<select className="selectpicker form-control" data-live-search="false">
-																	<option value="0">year</option>
-																	<option value="1">1985</option>
-																	<option value="2" selected>1986</option>
-																	<option value="3">1987</option>
+																	<option defaultValue="0">year</option>
+																	<option defaultValue="1">1985</option>
+																	<option defaultValue="2">1986</option>
+																	<option defaultValue="3">1987</option>
 																</select>
 															</div>
 														</div>
@@ -163,7 +163,7 @@ class UserProfile extends Component{
 												
 													<div className="form-group">
 														<label>Email</label>
-														<input type="email" className="form-control" value="myemail@gmail.com"/>
+														<input type="email" className="form-control" defaultValue="myemail@gmail.com"/>
 													</div>
 													
 												</div>
@@ -178,17 +178,17 @@ class UserProfile extends Component{
 													
 													<div className="col-sm-6 col-md-4">
 														<select className="selectpicker show-tick form-control mb-15" data-live-search="false">
-															<option value="0">Select</option>
-															<option value="1">Diploma</option>
-															<option value="2" selected>Bachelor</option>
-															<option value="3">Master</option>
-															<option value="4">Doctoral </option>
-															<option value="5">Certificate</option>
+															<option defaultValue="0">Select</option>
+															<option defaultValue="1">Diploma</option>
+															<option defaultValue="2">Bachelor</option>
+															<option defaultValue="3">Master</option>
+															<option defaultValue="4">Doctoral </option>
+															<option defaultValue="5">Certificate</option>
 														</select>
 													</div>
 													
 													<div className="col-sm-6 col-md-4">
-														<input type="text" className="form-control mb-15" value="Engineering"/>
+														<input type="text" className="form-control mb-15" defaultValue="Engineering"/>
 													</div>
 														
 												</div>
@@ -199,7 +199,7 @@ class UserProfile extends Component{
 												
 													<div className="form-group">
 														<label>Address</label>
-														<input type="text" className="form-control" value="254"/>
+														<input type="text" className="form-control" defaultValue="254"/>
 													</div>
 													
 												</div>
@@ -208,7 +208,7 @@ class UserProfile extends Component{
 												
 													<div className="form-group">
 														<label>City/town</label>
-														<input type="text" className="form-control" value="Somewhere "/>
+														<input type="text" className="form-control" defaultValue="Somewhere "/>
 													</div>
 													
 												</div>
@@ -219,7 +219,7 @@ class UserProfile extends Component{
 												
 													<div className="form-group">
 														<label>Province/State</label>
-														<input type="text" className="form-control" value="Paris"/>
+														<input type="text" className="form-control" defaultValue="Paris"/>
 													</div>
 													
 												</div>
@@ -228,7 +228,7 @@ class UserProfile extends Component{
 												
 													<div className="form-group">
 														<label>Street</label>
-														<input type="text" className="form-control" value="Somewhere "/>
+														<input type="text" className="form-control" defaultValue="Somewhere "/>
 													</div>
 													
 												</div>
@@ -239,7 +239,7 @@ class UserProfile extends Component{
 												
 													<div className="form-group">
 														<label>Zip Code</label>
-														<input type="text" className="form-control" value="35214"/>
+														<input type="text" className="form-control" defaultValue="35214"/>
 													</div>
 													
 												</div>
@@ -249,12 +249,12 @@ class UserProfile extends Component{
 													<div className="form-group">
 														<label>Country</label>
 														<select className="selectpicker show-tick form-control" data-live-search="false">
-															<option value="0">Select</option>
-															<option value="1">Thailand</option>
-															<option value="2" selected>France</option>
-															<option value="3">China</option>
-															<option value="4">Malaysia </option>
-															<option value="5">Italy</option>
+															<option defaultValue="0">Select</option>
+															<option defaultValue="1">Thailand</option>
+															<option defaultValue="2">France</option>
+															<option defaultValue="3">China</option>
+															<option defaultValue="4">Malaysia </option>
+															<option defaultValue="5">Italy</option>
 														</select>
 													</div>
 													
@@ -266,7 +266,7 @@ class UserProfile extends Component{
 												
 													<div className="form-group">
 														<label>Phone Number</label>
-														<input type="text" className="form-control" value="+66-85-221-5489"/>
+														<input type="text" className="form-control" defaultValue="+66-85-221-5489"/>
 													</div>
 													
 												</div>

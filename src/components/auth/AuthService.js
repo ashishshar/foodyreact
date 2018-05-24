@@ -21,6 +21,19 @@ export default class AuthService {
         })
     }
 
+    register(data) {
+        // Get a token
+        return this.fetch(`${this.domain}/register`, {
+            method: 'POST',
+            body: JSON.stringify({
+                data
+            })
+        }).then(res => {
+            //this.setToken(res.token)
+            return res;
+        })
+    }
+
     loggedIn() {
         // Checks if there is a saved token and it's still valid
         const token = this.getToken()

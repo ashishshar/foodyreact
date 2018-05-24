@@ -1,7 +1,37 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import AuthService from '../AuthService';
 class Register extends Component {
+    constructor(props) {
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.Auth = new AuthService();
+
+    }
+    componentWillMount() {
+        if (this.Auth.loggedIn())
+            this.props.history.replace('/');
+    }
+    handleChange(e) {
+        this.setState(
+            {
+                [e.target.name]: e.target.value
+            }
+        )
+    }
+    handleFormSubmit(e) {
+        e.preventDefault();
+        this.Auth.register(this.state)
+            .then(res => {
+                window.location.reload();
+                this.props.history.replace('/profile');
+
+            })
+            .catch(err => {
+                alert(err);
+            })
+    }
     render() {
         return (
             <div className="main-wrapper">
@@ -28,37 +58,44 @@ class Register extends Component {
                                             <div className="register-block-form">
                                                 <h4>Create the New Account</h4>
                                                 <div className="bor bg-orange"></div>
-                                                <form className="form" role="form">
-                                                    <div className="form-group">
-                                                        <label className="control-label">Name</label>
-                                                        <input type="text" className="form-control" placeholder="Enter Name" />
-                                                    </div>
+                                                <form className="form" role="form" onSubmit={this.handleFormSubmit}>
                                                     <div className="form-group">
                                                         <label className="control-label">Email</label>
-                                                        <input type="text" className="form-control" placeholder="Enter Email" />
+                                                        <input 
+                                                            type="text" 
+                                                            className="form-control" 
+                                                            placeholder="Enter Email" 
+                                                            name="email"
+                                                            onChange={this.handleChange}
+                                                        />
                                                     </div>
                                                     <div className="form-group">
                                                         <label className="control-label">Password</label>
-                                                        <input type="password" className="form-control" placeholder="Enter Password" />
+                                                        <input 
+                                                            type="password" 
+                                                            className="form-control" 
+                                                            placeholder="Enter Password"
+                                                            name="password"
+                                                            onChange={this.handleChange}
+                                                        />
                                                     </div>
                                                     <div className="form-group">
                                                         <label className="control-label">Confirm Password</label>
-                                                        <input type="password" className="form-control" placeholder="Re-type password again" />
-                                                    </div>
-                                                    <div className="form-group">
-                                                        <label className="control-label">Your Country</label>
-                                                        <select className="form-control" id="country">
-                                                            <option>Select Your Country</option>
-                                                            <option>India</option>
-                                                            <option>USA</option>
-                                                            <option>London</option>
-                                                            <option>Canada</option>
-                                                        </select>
+                                                        <input 
+                                                            type="password" 
+                                                            className="form-control" 
+                                                            name="confirm"
+                                                            placeholder="Re-type password again"
+                                                        />
                                                     </div>
                                                     <div className="form-group">
                                                         <div className="checkbox">
                                                             <label>
-                                                                <input type="checkbox" /> By register, I read & accept  <a href="#">the terms</a>
+                                                                <input 
+                                                                    type="checkbox" 
+                                                                    name="trms"
+                                                                    onChange={this.handleChange}
+                                                                /> By register, I read & accept  <a href="#">the terms</a>
                                                             </label>
                                                         </div>
                                                     </div>
