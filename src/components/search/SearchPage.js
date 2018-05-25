@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import { Link } from 'react-router-dom';
 import Searchpanel from './Searchpanel';
-
+import Rating from 'react-rating';
 const API = 'http://localhost:8080/restaurants/search/';
 
 class SearchPage extends React.Component{
@@ -67,7 +67,16 @@ class SearchPage extends React.Component{
                                                                     </li>
                                                                     <li>
                                                                         <span>Rating:</span>
-                                                                        3.2
+                                                                        <Rating
+                                                                            readonly
+                                                                            stop={5}
+                                                                            emptySymbol={['fa fa-star-o fa-2x low', 'fa fa-star-o fa-2x low',
+                                                                                'fa fa-star-o fa-2x medium', 'fa fa-star-o fa-2x medium',
+                                                                                'fa fa-star-o fa-2x high']}
+                                                                            fullSymbol={['fa fa-star fa-2x low', 'fa fa-star fa-2x low',
+                                                                                'fa fa-star fa-2x medium', 'fa fa-star fa-2x medium',
+                                                                                'fa fa-star fa-2x high']}
+                                                                        />
                                                                     </li>
                                                                     <li>
                                                                         <span>Min Order:</span>

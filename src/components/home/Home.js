@@ -34,6 +34,7 @@ class Home extends Component {
 				<div className="hero" style={heroStyle}>
 					<div className="container">
 						<h1>Fullka</h1>
+						
 						<p>Find amazing selection of local restaurant delivering food to your door</p>
 						<div className="main-search-form-wrapper">
 							<form onSubmit={this.handleSubmit}>
