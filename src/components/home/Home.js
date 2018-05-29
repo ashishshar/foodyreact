@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const imgUrl = require("../../assets/images/hero-header/index-banner.png");
+const imgUrl = require("../../assets/images/top.jpg");
 const heroStyle = {
 	backgroundImage: 'url(' + imgUrl + ')'
 };
@@ -22,9 +22,9 @@ class Home extends Component {
 		console.log(this.state);
 	}
 	handleSubmit(event) {
-		const place = this.state.place;
+		const place = 'test';
 		const restu = this.state.restaurant;
-		alert('A name was submitted: ' + this.state.place);
+		//alert('A name was submitted: ' + this.state.place);
 		event.preventDefault();
 		this.props.history.push('/search/' + place + '/' + restu);
 	}
@@ -41,7 +41,7 @@ class Home extends Component {
 								<div className="form-holder">
 									<div className="row gap-0">	
 										<div className="col-xss-6 col-xs-6 col-sm-6">
-											<input className="form-control" placeholder="e.g. SW6 6LG / SW6 / London" onChange={this.handlePlaceChange}/>
+											<input className="form-control" placeholder="e.g. SW6 6LG / SW6 / London" value="" onChange={this.handlePlaceChange} readOnly/>
 										</div>
 										<div className="col-xss-6 col-xs-6 col-sm-6">
 											<input className="form-control" placeholder="Find a restaurant" onChange={this.handleRestaurantChange} />

@@ -25,15 +25,15 @@ class Header extends Component{
         if (this.state.userlogin) {
             return (
                 <header id="header" style={{ background: '#000' }}>
-                    <nav className="navbar navbar-default navbar-sticky-function" style={{ borderBottom: '1px solid #696969', paddingTop: '10px', paddingBottom: '10px', background: 'rgba(0, 0, 0, 0.3)' }}>
+                    <nav className="navbar navbar-default navbar-sticky-function" style={{paddingTop: '10px', paddingBottom: '10px', background: 'rgba(0, 0, 0, 0.3)' }}>
                         <div className="container">
                             <div className="logo-wrapper">
                                 <div className="logo">
                                     <Link to={`/`}><img src={require("../../assets/images/logo.png")} alt="Logo" /></Link>
                                 </div>
                             </div>
-                            <div id="navbar" className="navbar-arrow">
-                                <ul className="nav navbar-nav navbar-text" id="responsive-menu">
+                            {/* <div id="navbar" className="navbar-arrow">
+                                {/* <ul className="nav navbar-nav navbar-text" id="responsive-menu">
                                     <li>
                                         <a>Home</a>
                                     </li>
@@ -49,8 +49,8 @@ class Header extends Component{
                                     <li>
                                         <a>Page</a>
                                     </li>
-                                </ul>
-                            </div>
+                                </ul> 
+                            </div> */}
                             <div className="nav-mini-wrapper">
                                 <ul className="nav-mini sign-in">
                                     <li>
@@ -66,14 +66,14 @@ class Header extends Component{
         } else {
             return (
                 <header id="header" style={{ background: '#000' }}>
-                    <nav className="navbar navbar-default navbar-sticky-function" style={{ borderBottom: '1px solid #696969', paddingTop: '10px', paddingBottom: '10px', background: 'rgba(0, 0, 0, 0.3)' }}>
+                    <nav className="navbar navbar-default navbar-sticky-function" style={{ paddingTop: '10px', paddingBottom: '10px', background: 'rgba(0, 0, 0, 0.3)' }}>
                         <div className="container">
                             <div className="logo-wrapper">
                                 <div className="logo">
                                     <Link to={`/`}><img src={require("../../assets/images/logo.png")} alt="Logo" /></Link>
                                 </div>
                             </div>
-                            <div id="navbar" className="navbar-arrow">
+                            {/* <div id="navbar" className="navbar-arrow">
                                 <ul className="nav navbar-nav navbar-text" id="responsive-menu">
                                     <li>
                                         <a>Home</a>
@@ -91,7 +91,7 @@ class Header extends Component{
                                         <a>Page</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> */}
                             <div className="nav-mini-wrapper">
                                 <ul className="nav-mini sign-in">
                                     <li><Link to={`/login`}>Login</Link></li>
