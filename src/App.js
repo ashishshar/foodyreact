@@ -12,6 +12,8 @@ import EditProfile from './components/user/EditProfile';
 import Orders from './components/user/Orders';
 import AuthService from './components/auth/AuthService';
 import withAuth from './components/auth/WithAuth';
+import Dashboard from './components/user/Dashboard';
+import ChangePassword from './components/user/ChangePassword';
 class App extends Component {
   constructor() {
     super();
@@ -38,9 +40,10 @@ class App extends Component {
             <Route path='/single/:id/:name' component={Single}/>
             <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />
-            <Route path='/profile' component={Profile} />
-            <Route path='/editprofile' component={EditProfile} />
-            <Route path='/orders' component={Orders} />
+            <Route path='/user/dashboard' component={Dashboard} />
+            <Route path='/user/profile' component={Profile} />
+            <Route path='/user/changepassword' component={ChangePassword}/>
+            <Route path='/user/orders' component={Orders} />
           </Switch>
           <Footer/>
         </div>

@@ -32,29 +32,13 @@ class Header extends Component{
                                     <Link to={`/`}><img src={require("../../assets/images/logo.png")} alt="Logo" /></Link>
                                 </div>
                             </div>
-                            {/* <div id="navbar" className="navbar-arrow">
-                                {/* <ul className="nav navbar-nav navbar-text" id="responsive-menu">
-                                    <li>
-                                        <a>Home</a>
-                                    </li>
-                                    <li>
-                                        <a>Restaurant</a>
-                                    </li>
-                                    <li>
-                                        <a>Order</a>
-                                    </li>
-                                    <li>
-                                        <a>Blog</a>
-                                    </li>
-                                    <li>
-                                        <a>Page</a>
-                                    </li>
-                                </ul> 
-                            </div> */}
                             <div className="nav-mini-wrapper">
                                 <ul className="nav-mini sign-in">
                                     <li>
-                                        <Link className="btn" to={`/`} onClick={this.handleLogout}>Logout</Link>
+                                        <Link className="btn" to={'/user/dashboard'}>Account</Link>
+                                    </li>
+                                    <li>
+                                        <Link className="btn" to={'/'} onClick={this.handleLogout}>Logout</Link>
                                         </li>
                                 </ul>
                             </div>
@@ -73,25 +57,7 @@ class Header extends Component{
                                     <Link to={`/`}><img src={require("../../assets/images/logo.png")} alt="Logo" /></Link>
                                 </div>
                             </div>
-                            {/* <div id="navbar" className="navbar-arrow">
-                                <ul className="nav navbar-nav navbar-text" id="responsive-menu">
-                                    <li>
-                                        <a>Home</a>
-                                    </li>
-                                    <li>
-                                        <a>Restaurant</a>
-                                    </li>
-                                    <li>
-                                        <a>Order</a>
-                                    </li>
-                                    <li>
-                                        <a>Blog</a>
-                                    </li>
-                                    <li>
-                                        <a>Page</a>
-                                    </li>
-                                </ul>
-                            </div> */}
+                            
                             <div className="nav-mini-wrapper">
                                 <ul className="nav-mini sign-in">
                                     <li><Link to={`/login`}>Login</Link></li>

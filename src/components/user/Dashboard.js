@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+//import {Tab, Row, Col, Nav, NavItem}  from 'react-bootstrap';
 import AuthService from '../auth/AuthService';
 import withAuth from '../auth/WithAuth';
 import SideTop from './SideTop';
 const Auth = new AuthService();
 
-class Orders extends Component {
+class Dashboard extends Component {
     handleLogout() {
         Auth.logout()
         this.props.history.replace('/login');
     }
     render() {
-        return (
+        return(
             <div className="main-wrapper">
                 <div className="breadcrumb-wrapper">
 
                     <div className="container">
                         <ol className="breadcrumb-list booking-step">
                             <li><Link to={'/'}>Home</Link></li>
-                            <li><span>My Orders</span></li>
+                            <li><span>User Dashboard</span></li>
                         </ol>
                     </div>
 
@@ -31,7 +32,7 @@ class Orders extends Component {
                                     <div className="admin-sidebar">
                                         <SideTop/>
                                         <ul className="admin-user-menu clearfix">
-                                            <li>
+                                            <li className="active">
                                                 <Link to={'/user/dashboard'}><i className="fa fa-tachometer"></i> Dashboard</Link>
                                             </li>
                                             <li>
@@ -40,7 +41,7 @@ class Orders extends Component {
                                             <li>
                                                 <Link to={'/user/changepassword'}><i className="fa fa-key"></i> Change Password</Link>
                                             </li>
-                                            <li className="active">
+                                            <li>
                                                 <Link to={'/user/orders'}><i className="fa fa-bookmark"></i> Order</Link>
                                             </li>
                                             {/* <li>
@@ -52,12 +53,10 @@ class Orders extends Component {
                                 <div className="GridLex-col-9_sm-8_xs-12">
                                     <div className="admin-content-wrapper">
                                         <div className="admin-section-title">
-                                            <h2>My Orders</h2>
+                                            <h2>Dashboard</h2>
                                             <p>Welcome to fullka</p>
                                         </div>
-                                        <div>
-                                            Order List
-                                        </div>
+                                        <div>Hey there whats app</div>
                                     </div>
                                 </div>
                             </div>
@@ -69,4 +68,4 @@ class Orders extends Component {
     }
 }
 
-export default withAuth(Orders);
+export default withAuth(Dashboard);

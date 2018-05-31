@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+//import {Tab, Row, Col, Nav, NavItem}  from 'react-bootstrap';
 import AuthService from '../auth/AuthService';
 import withAuth from '../auth/WithAuth';
 import SideTop from './SideTop';
 const Auth = new AuthService();
 
-class Orders extends Component {
+class ChangePassword extends Component {
     handleLogout() {
         Auth.logout()
         this.props.history.replace('/login');
@@ -18,7 +19,7 @@ class Orders extends Component {
                     <div className="container">
                         <ol className="breadcrumb-list booking-step">
                             <li><Link to={'/'}>Home</Link></li>
-                            <li><span>My Orders</span></li>
+                            <li><span>Change Password</span></li>
                         </ol>
                     </div>
 
@@ -37,10 +38,10 @@ class Orders extends Component {
                                             <li>
                                                 <Link to={'/user/profile'}><i className="fa fa-user"></i> Profile</Link>
                                             </li>
-                                            <li>
+                                            <li className="active">
                                                 <Link to={'/user/changepassword'}><i className="fa fa-key"></i> Change Password</Link>
                                             </li>
-                                            <li className="active">
+                                            <li>
                                                 <Link to={'/user/orders'}><i className="fa fa-bookmark"></i> Order</Link>
                                             </li>
                                             {/* <li>
@@ -52,12 +53,38 @@ class Orders extends Component {
                                 <div className="GridLex-col-9_sm-8_xs-12">
                                     <div className="admin-content-wrapper">
                                         <div className="admin-section-title">
-                                            <h2>My Orders</h2>
-                                            <p>Welcome to fullka</p>
+                                            <h2>Change Password</h2>
+                                            <p>Change your password.</p>
                                         </div>
-                                        <div>
-                                            Order List
-                                        </div>
+                                        <form className="post-form-wrapper">
+                                            <div className="row gap-20">
+                                                <div className="col-sm-6 col-md-4">
+                                                    <div className="form-group">
+                                                        <label>Current Password</label>
+                                                        <input type="password" className="form-control" placeholder="Current Password" />
+                                                    </div>
+                                                </div>
+                                                <div className="clear"></div>
+                                                <div className="col-sm-6 col-md-4">
+                                                    <div className="form-group">
+                                                        <label>New Password</label>
+                                                        <input type="password" className="form-control" placeholder="New Password" />
+                                                    </div>
+                                                </div>
+                                                <div className="clear"></div>
+                                                <div className="col-sm-6 col-md-4">
+                                                    <div className="form-group">
+                                                        <label>Confirm Password</label>
+                                                        <input type="password" className="form-control" placeholder="Confirm Password" />
+                                                    </div>
+                                                </div>
+                                                <div className="clear"></div>
+                                                <div className="col-sm-12 mt-10">
+                                                    <a href="#" className="btn btn-primary">Save</a>
+                                                    <a href="#" className="btn btn-primary btn-inverse">Cancel</a>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -68,5 +95,4 @@ class Orders extends Component {
         );
     }
 }
-
-export default withAuth(Orders);
+export default withAuth(ChangePassword);

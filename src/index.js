@@ -7,6 +7,7 @@ import 'jquery';
 import 'jquery.easing';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
+import 'react-bootstrap';
 import './assets/css/animate.css';
 import './assets/css/main.css';
 import './assets/css/style.css';

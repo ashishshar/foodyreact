@@ -25,8 +25,7 @@ class Login extends Component{
         this.Auth.login(this.state.username, this.state.password)
             .then(res => {
                 window.location.reload();
-                this.props.history.replace('/profile');
-
+                this.props.history.replace('/user/dashboard');
             })
             .catch(err => {
                 alert(err);

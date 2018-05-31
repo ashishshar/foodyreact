@@ -2,6 +2,10 @@ import React, {
     Component
 } from 'react';
 import { Link } from 'react-router-dom';
+import AuthService from '../auth/AuthService';
+import withAuth from '../auth/WithAuth';
+import UserReview from './UserReview';
+const Auth = new AuthService();
 const imgUrl = require("../../assets/images/top.jpg");
 const heroStyle = {
 	backgroundImage: 'url(' + imgUrl + ')'
@@ -13,20 +17,40 @@ class Single extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            searchResult: ''
-        };
+			searchResult: '',
+			userlogin: false
+		};
+		this.checkReview = this.checkReview.bind(this);
+		this.Auth = new AuthService();
     }
     componentWillMount() {
         const url = API + this.props.match.params.id;
-        console.log(url);
         const parent = this;
         fetch(url)
             .then(response => response.json())
             .then(function (result) {
                 console.log(result);
                 parent.setState({ searchResult: result.data})
-            });   
-    }
+			}); 
+		if (parent.Auth.loggedIn()) {
+			parent.setState({ userlogin: true });
+		} else {
+			parent.setState({ userlogin: false });
+		}  
+	}
+	checkReview(){
+		if (this.state.userlogin){
+			return (
+				<div>
+					<h3>Add Rating</h3>
+					<UserReview />
+				</div>
+				
+			);
+		}else{
+			return "";
+		}
+	}
     render(){
         const {searchResult} = this.state;
         console.log(searchResult);
@@ -51,11 +75,12 @@ class Single extends Component{
 										</div>
                                         <h2 className="heading mb-15">{searchResult.rs_name}</h2>
 										<div className="meta-div clearfix mb-25">
-                                            <span>cusine <a>{searchResult.rs_city}</a> </span>
+                                            <span>Cusine <a>{searchResult.rs_city}</a> </span>
 											<span className="res-btn label label-success">{searchResult.rs_restType}</span>
 										</div>
 									</div>
 									<div className="restaurant-detail-content mt-30 clearfix">
+										{this.checkReview()}
 										<h3>Overview</h3>
 										<div className="row" style={{ marginBottom: '20px' }}>
 											<div className="col-sm-6 col-md-4">

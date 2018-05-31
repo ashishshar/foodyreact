@@ -2,7 +2,6 @@ import React, {
     Component
 } from 'react';
 import { Link } from 'react-router-dom';
-import Rating from 'react-rating';
 const API = 'http://localhost:8080/restaurants/search/';
 
 class SearchPage extends React.Component{
